@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>禾伙人留言</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/index.css">
+	<style>
+		/* 卡通装饰元素 */
+		.decoration {
+			position: fixed;
+			z-index: 100;
+			opacity: 0.6;
+			pointer-events: none;
+		}
+		.sun {
+			top: 100px;
+			right: 50px;
+			font-size: 60px;
+			animation: spin 20s linear infinite;
+		}
+		.rose {
+			top: 200px;
+			left: 30px;
+			font-size: 40px;
+			animation: sway 3s ease-in-out infinite;
+		}
+		.bee {
+			bottom: 200px;
+			right: 100px;
+			font-size: 35px;
+			animation: fly 4s ease-in-out infinite;
+		}
+		.strawberry {
+			bottom: 100px;
+			left: 50px;
+			font-size: 45px;
+			animation: bounce 2s ease-in-out infinite;
+		}
+		.wheat {
+			top: 300px;
+			right: 30px;
+			font-size: 50px;
+			animation: sway 4s ease-in-out infinite;
+		}
+		@keyframes spin {
+			from { transform: rotate(0deg); }
+			to { transform: rotate(360deg); }
+		}
+		@keyframes sway {
+			0%, 100% { transform: rotate(-5deg); }
+			50% { transform: rotate(5deg); }
+		}
+		@keyframes fly {
+			0%, 100% { transform: translate(0, 0); }
+			25% { transform: translate(20px, -15px); }
+			50% { transform: translate(0, -30px); }
+			75% { transform: translate(-20px, -15px); }
+		}
+		@keyframes bounce {
+			0%, 100% { transform: translateY(0); }
+			50% { transform: translateY(-10px); }
+		}
+		
+		/* 留言表单样式 */
+		.message-form {
+			background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+			border-radius: 15px;
+			padding: 30px;
+			box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+			margin-bottom: 30px;
+		}
+		.message-form h3 {
+			color: #4E8531;
+			font-weight: bold;
+			margin-bottom: 25px;
+			text-align: center;
+		}
+		.message-card {
+			background: white;
+			border-radius: 12px;
+			padding: 20px;
+			margin-bottom: 20px;
+			box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+			transition: transform 0.3s ease, box-shadow 0.3s ease;
+		}
+		.message-card:hover {
+			transform: translateY(-3px);
+			box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+		}
+		.message-header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 15px;
+			padding-bottom: 10px;
+			border-bottom: 1px solid #eee;
+		}
+		.message-nickname {
+			font-weight: bold;
+			color: #4E8531;
+			font-size: 16px;
+		}
+		.message-time {
+			font-size: 12px;
+			color: #999;
+		}
+		.message-content {
+			color: #333;
+			line-height: 1.6;
+			margin-bottom: 15px;
+		}
+		.message-media {
+			max-width: 100%;
+			border-radius: 8px;
+			margin-top: 10px;
+		}
+		.btn-submit {
+			background: linear-gradient(135deg, #4E8531 0%, #6BBF59 100%);
+			border: none;
+			color: white;
+			padding: 12px 30px;
+			border-radius: 25px;
+			font-weight: bold;
+			transition: all 0.3s ease;
+		}
+		.btn-submit:hover {
+			transform: translateY(-2px);
+			box-shadow: 0 5px 20px rgba(78, 133, 49, 0.4);
+		}
+		.form-control:focus {
+			border-color: #4E8531;
+			box-shadow: 0 0 0 3px rgba(78, 133, 49, 0.1);
+		}
+	</style>
+  </head>
+  <body>
+	  <!--导航栏-->
+    <nav class="navbar">
+      <div class="container-fluid navbar-inverse navbar-fixed-top">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html" style="display: flex; align-items: center; gap: 8px; font-size: 22px; font-weight: bold; font-family: 'KaiTi', 'STKaiti', serif;">十个勤天 <span style="font-size: 24px;">🌞</span></a>
+        </div>
+   
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav" style="display: flex; justify-content: center; width: 100%; font-size: 17px;">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="page1.html">成员介绍</a></li>
+		    <li><a href="page2.html">勤天资讯</a></li>
+			<li><a href="page3.html">小种子农学手册</a></li>
+			<li><a href="page4.html">禾伙人留言</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+	<br><br>
+	
+	<!-- 卡通装饰元素 -->
+	<div class="decoration sun">🌞</div>
+	<div class="decoration rose">🌹</div>
+	<div class="decoration bee">🐝</div>
+	<div class="decoration strawberry">🍓</div>
+	<div class="decoration wheat">🌾</div>
+	
+    <h2 style="text-align: center; color: #4E8531; font-weight: bold; margin-top: 60px;">禾伙人留言板</h2>
+	<p style="text-align: center; color: #666; margin-bottom: 30px;">分享你的心声，与所有禾伙人一起守护这片土地</p>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">
+				<!-- 留言表单 -->
+				<div class="message-form">
+					<h3>💌 写下你的留言</h3>
+					<form id="messageForm">
+						<div class="form-group">
+							<label for="nickname">昵称 <span style="color: #4E8531;">✧</span></label>
+							<input type="text" class="form-control" id="nickname" placeholder="请输入你的昵称" required>
+						</div>
+						<div class="form-group">
+							<label for="email">邮箱 <span style="color: #4E8531;">✧</span></label>
+							<input type="email" class="form-control" id="email" placeholder="请输入你的邮箱（仅用于回复）" required>
+						</div>
+						<div class="form-group">
+							<label for="content">留言内容 <span style="color: #4E8531;">✧</span></label>
+							<textarea class="form-control" id="content" rows="4" placeholder="写下你想说的话..." required></textarea>
+						</div>
+						<div class="form-group">
+							<label for="image">上传图片</label>
+							<input type="file" class="form-control-file" id="image" accept="image/*">
+							<small class="text-muted">支持 jpg、png 格式</small>
+						</div>
+						<div class="form-group">
+							<label for="video">上传视频</label>
+							<input type="file" class="form-control-file" id="video" accept="video/*">
+							<small class="text-muted">支持 mp4、webm 格式</small>
+						</div>
+						<button type="submit" class="btn btn-submit btn-block">📤 提交留言</button>
+					</form>
+				</div>
+			</div>
+			
+			<div class="col-md-6">
+				<!-- 留言列表 -->
+				<h3 style="color: #4E8531; font-weight: bold; margin-bottom: 20px;">💬 最新留言</h3>
+				<div id="messageList">
+					<!-- 示例留言 -->
+					<div class="message-card">
+						<div class="message-header">
+							<span class="message-nickname">🌱 第234977位禾伙人</span>
+							<span class="message-time">2026/03/27 14:30</span>
+						</div>
+						<div class="message-content">
+							不要心急，等一个晴天
+						</div>
+					</div>
+					
+					<div class="message-card">
+						<div class="message-header">
+							<span class="message-nickname">🌾 勤劳的小蜜蜂</span>
+							<span class="message-time">2025/12/14 20:15</span>
+						</div>
+						<div class="message-content">
+							亲爱的禾伙人，如果你决定好啦，像种子一样发芽，就祝你种自己得自己！🍚
+						</div>
+						<img src="images/后陡门58.jpg" class="message-media" alt="留言图片">
+					</div>
+					
+					<div class="message-card">
+						<div class="message-header">
+							<span class="message-nickname">🌹 Somebody people！</span>
+							<span class="message-time">2025/02/21 10:00</span>
+						</div>
+						<div class="message-content">
+							从第一季追到现在，见证了十个少年的成长。后陡门的故事还在继续，我们的故事也未完待续……
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- 页脚 -->
+	<div class="container-fluid footer" style="margin-top: 50px;">
+		<div class="row">
+			<div class="col-md-12">Copyright © LIUYANG 相信土地的力量</div>
+		</div>
+	</div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+	<script>
+		// 提交留言
+		document.getElementById('messageForm').addEventListener('submit', function(e) {
+			e.preventDefault();
+			
+			var nickname = document.getElementById('nickname').value;
+			var content = document.getElementById('content').value;
+			
+			var messageCard = document.createElement('div');
+			messageCard.className = 'message-card';
+			messageCard.innerHTML = `
+				<div class="message-header">
+					<span class="message-nickname">🌱 ${nickname}</span>
+					<span class="message-time">${new Date().toLocaleString('zh-CN')}</span>
+				</div>
+				<div class="message-content">${content}</div>
+			`;
+			
+			document.getElementById('messageList').insertBefore(messageCard, document.getElementById('messageList').firstChild);
+			
+			// 重置表单
+			this.reset();
+			
+			alert('留言提交成功！🌹');
+		});
+	</script>
+  </body>
+</html>

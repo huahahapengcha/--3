@@ -1,0 +1,236 @@
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>勤天资讯</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/index.css">
+	<style>
+		/* 列表项居中对齐 */
+		.list-group-item {
+			text-align: center;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 12px 15px;
+		}
+		.list-group-item p.pull-right {
+			margin-bottom: 0;
+			font-size: 13px;
+			color: #666;
+		}
+		/* 新闻图片放大并居中 */
+		.news-img-container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+			min-height: 140px;
+		}
+		.news-img-container img {
+			max-width: 100%;
+			max-height: 140px;
+			height: auto;
+			display: block;
+			border-radius: 8px;
+		}
+		/* 新闻内容区域 */
+		.news-content {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			height: 100%;
+		}
+		.xwnc-title {
+			margin-top: 0;
+			margin-bottom: 8px;
+		}
+		.xwnc-text1 {
+			margin-bottom: 8px;
+			color: #888;
+			font-size: 14px;
+		}
+		.xwnc-text2 {
+			margin-bottom: 0;
+			line-height: 1.6;
+		}
+		/* 面板内容紧凑 */
+		.panel {
+			margin-bottom: 15px;
+		}
+		.panel-body {
+			padding: 15px;
+		}
+		/* 搜索热榜和推荐阅读标题居中 */
+		.panel-title {
+			text-align: center;
+		}
+		/* 资讯图片放大 */
+		.dynamic-pic {
+			width: 100%;
+			height: auto;
+			display: block;
+			margin-bottom: 15px;
+			border-radius: 8px;
+		}
+	</style>
+  </head>
+  <body>
+	  <!--导航栏-->
+    <nav class="navbar">
+      <div class="container-fluid navbar-inverse navbar-fixed-top">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html" style="display: flex; align-items: center; gap: 8px; font-size: 22px; font-weight: bold; font-family: 'KaiTi', 'STKaiti', serif;">十个勤天 <span style="font-size: 24px;">🌞</span></a>
+        </div>
+   
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav" style="display: flex; justify-content: center; width: 100%; font-size: 17px;">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="page1.html">成员介绍</a></li>
+		    <li><a href="page2.html">勤天资讯</a></li>
+			<li><a href="page3.html">小种子农学手册</a></li>
+			<li><a href="page4.html">禾伙人留言</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+	<br>
+    <h2 style="text-align: center;">勤天资讯</h2>
+	<div class="container dynamic">
+		<div class="row">
+			<!-- 响应式布局中等屏幕（电脑端）占据一行四列 -->
+			<div class="col-md-4">
+				<img class="dynamic-pic" src="images/zixun.jpg" alt="资讯">
+				<!-- 面板组件 -->
+				<div class="panel panel-default hot">
+				  <div class="panel-heading">
+					  <!-- 面板组件标题 -->
+				    <h3 class="panel-title" style="font-weight: bold;">热搜内容</h3>
+				  </div>
+				  <!-- 列表组 -->
+				  <div class="list-group">
+				      <a href="https://xjrb.ts.cn/xjrb/20260413/256490.html" target="_blank" class="list-group-item">新疆策勒助农直播：策勒红枣……<p class="pull-right">2026/04/13 </p></a>
+				      <a href="https://ghrp.cctv.com/2025/05/26/ARTILFYVRbmf58Ghq8M8d6zC250526.shtml" target="_blank" class="list-group-item">第二届“5・18爱侬日”：探索助农新范式<p class="pull-right">2025/05/18</p></a>
+				      <a href="https://www.xiaohongshu.com/discovery/item/68c625da000000001d022f8d?source=webshare&xhsshare=pc_web&xsec_token=AB-lThcW_hQJpqjR-8JqxDjgheyb1mQQ580ykrLlQFKto=&xsec_source=pc_share" target="_blank" class="list-group-item">杭州 "种地星球" 农文旅项目正式开园<p class="pull-right">2025/09/17</p></a>
+				      <a href="https://www.toutiao.com/article/7510045893333139980/" target="_blank" class="list-group-item">黑龙江林口：“维C之王”沙棘直播<p class="pull-right">2025/05/30</p></a>
+				      <a href="https://www.qh.chinanews.com.cn/sh/news/2025/0321/133704.html" target="_blank" class="list-group-item">青海囊谦：芫根狂享，2分钟售罄<p class="pull-right">2025/03/21</p></a>
+					  <a href="https://mp.weixin.qq.com/s/u54KcEZ7zwIEcAec9evwtg" target="_blank" class="list-group-item">十个勤天自费沙漠种植18万棵梭梭树<p class="pull-right">2024/03/12</p></a>
+					</div>				  
+				</div>
+				<div class="panel panel-default read">
+				  <div class="panel-heading">
+				    <h3 class="panel-title" style="font-weight: bold;">推荐阅读</h3>
+				  </div>
+				  <div class="list-group">
+				      <a href="https://weibo.com/7781218487/QE5AlA8rc?pagetype=profilefeed" target="_blank" class="list-group-item">看山水，见众生：从后陡门到四方乡土<p class="pull-right">2026/05/06</p></a>
+				      <a href="https://weibo.com/7781218487/QB6nkkshE?pagetype=profilefeed" target="_blank" class="list-group-item">种地吧（第三季）2025年度优秀网络综艺<p class="pull-right">2026/04/16</p></a>
+				      <a href="https://weibo.com/7781218487/PudW2kUwt?refer_flag=1001030103_" target="_blank" class="list-group-item">相约6.6：第三届麦田音乐会<p class="pull-right">2025/05/30</p></a>
+				      <a href="https://weibo.com/7827781925/QsQ8XBZ0m?pagetype=profilefeed" target="_blank" class="list-group-item">十个勤天成立三周年<p class="pull-right">2025/02/21</p></a>
+				      <a href="https://weibo.com/1682207150/PbFUHh5D6?refer_flag=1001030103_" target="_blank" class="list-group-item">十个勤天再登春晚舞台<p class="pull-right">2025/01/28</p></a>
+					</div>				  
+				</div>
+			</div>
+			
+			<!-- 响应式布局中等屏幕（电脑端）一行占据八列 -->
+			<div class="col-md-8 dy-bottom">
+				<!-- 面板组件 -->
+				<div class="panel panel-default">
+				  <div class="panel-body">
+				    	<div class="row">
+							<!-- 响应式布局大屏幕占据一行三列,中等屏幕(电脑端),小屏幕(平板端)和超小屏幕(手机端)都隐藏显示 -->
+				    		<div class="col-lg-3 col-md-4 news-img-container">
+				    			<a href=""><img src="images/新闻图1.jpg" alt="新闻图1"></a>
+				    		</div>
+							<!-- 响应式布局中等屏幕（电脑端）一行占据九列 -->
+							<div class="col-md-9">
+								<h4 class="xwnc-title"><a href="">种地吧518爱侬日</a></h4>
+								<p class="xwnc-text1">2024/05/18</p>
+								<p class="xwnc-text2">《种地吧2》爱侬，更爱农！如果侬是某地的文旅官方机构、如果侬有代表地方特色的好特产、如果侬有值得介绍的新农人故事……就请快来加入我们吧！</p>
+							</div>
+						</div>
+						<hr>
+						<div class="row">
+							<div class="col-lg-3 col-md-4 news-img-container">
+								<a href=""><img src="images/新闻图2.jpg" alt="新闻图2"></a>
+							</div>
+							<div class="col-md-9">
+								<h4 class="xwnc-title"><a href="">十个勤天大米“禾你见面”</a></h4>
+								<p class="xwnc-text1">2024/04/18</p>
+								<p class="xwnc-text2">卖大米，卖大米，卖大——米呀，卖大米！卖大丫米——明天中午12:08小店上架，十个勤天自己的米，“禾你见面”！</p>
+							</div>
+						</div>
+						<hr>
+						<div class="row">
+							<div class="col-lg-3 col-md-4 news-img-container">
+								<a href=""><img src="images/新闻图3.jpg" alt="新闻图3"></a>
+							</div>
+							<div class="col-md-9">
+								<h4 class="xwnc-title"><a href="">今日郁金香售卖直播17:00开启</a></h4>
+								<p class="xwnc-text1">2024/03/26</p>
+								<p class="xwnc-text2">今日郁金香售卖直播17:00开启，详细购买须知如下，烦请大家购买前仔细阅读，谨慎购买。</p>
+							</div>
+						</div>
+						<hr>
+						
+						<!-- Button trigger modal -->
+						<!-- 模态框 -->
+						<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+						  十个勤天
+						</button>
+						
+						<!-- Modal -->
+						
+						<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+						  <div class="modal-dialog" role="document">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						        <h4 class="modal-title" id="myModalLabel">十个勤天</h4>
+						      </div>
+							  <!-- 模态框内容 -->
+						      <div class="modal-body">
+						        <h3 style="text-align: center;">十个勤天</h3>
+								<p>十个勤天是劳作纪实真人秀《种地吧》中十名嘉宾的组合名，由蒋敦豪、鹭卓、李耕耘、李昊、赵一博、卓沅、赵小童、何浩楠、陈少熙、王一珩十人组成。十位年轻人从毫无经验的种地小白，一路学习成长，成为熟练掌握各项种地技能的“新农人”，将一方土地经营得有声有色。节目组为了解决后续农产品售卖资质问题，注册了“十个勤天”公司，还发布了“种地吧”和“十个勤天”的文创产品及周边。十个少年一步步从“菜鸟农人”变身创业能手，成为乡村振兴进程中的“弄潮儿”，在火热的土地上抒写着新时代“新农人”的奋斗故事。</p>
+						      </div>
+						      <div class="modal-footer">
+						        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+						        <button type="button" class="btn btn-primary">已了解</button>
+						      </div>
+						    </div>
+						  </div>
+						</div>
+					
+					
+					
+					
+				  </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<!-- 	版权说明区开始 -->
+
+     <div class="container-fluid  footer">
+       <div class="row">
+         <div class="col-md-12">Copyright © LIUYANG 相信土地的力量</div>
+       </div>
+     </div>
+	
+	
+    <!-- 引入js文件 -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

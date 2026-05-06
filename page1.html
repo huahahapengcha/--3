@@ -1,0 +1,371 @@
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>成员介绍</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/index.css">
+	<style>
+		.media-left img {
+			transition: transform 0.3s ease;
+			cursor: pointer;
+			border-radius: 8px;
+		}
+		.media-left img:hover {
+			transform: scale(1.1);
+			box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+		}
+		.modal {
+			display: none;
+			position: fixed;
+			z-index: 9999;
+			padding-top: 50px;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			overflow: auto;
+			background-color: rgba(0,0,0,0.9);
+		}
+		.modal-content {
+			margin: auto;
+			display: block;
+			max-width: 90%;
+			max-height: 80vh;
+			border-radius: 10px;
+		}
+		.close {
+			position: absolute;
+			top: 15px;
+			right: 35px;
+			color: #fff;
+			font-size: 40px;
+			font-weight: bold;
+			cursor: pointer;
+			transition: 0.3s;
+		}
+		.close:hover {
+			color: #ccc;
+		}
+		/* 人物卡片样式 */
+		.person-card {
+			border: 2px solid #4E8531;
+			border-radius: 12px;
+			padding: 20px;
+			background-color: #ffffff;
+			margin-bottom: 20px;
+			box-shadow: 0 4px 8px rgba(78, 133, 49, 0.15);
+			min-height: 380px;
+			display: flex;
+			flex-direction: row;
+			align-items: flex-start;
+		}
+		.person-card:hover {
+			box-shadow: 0 6px 12px rgba(78, 133, 49, 0.2);
+		}
+		.person-card .media-left {
+			flex-shrink: 0;
+			margin-right: 20px;
+		}
+		.person-card .media-left img {
+			border-radius: 8px;
+			border: 3px solid #E8F5E9;
+			width: 150px;
+			height: auto;
+			display: block;
+		}
+		.person-card .media-heading {
+			color: #4E8531;
+			font-weight: bold;
+			border-bottom: 1px solid #E8F5E9;
+			padding-bottom: 10px;
+			margin-bottom: 12px;
+			font-size: 1.3em;
+		}
+		.person-card .media-body {
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+		}
+		.person-card .media-body p {
+			margin-bottom: 8px;
+			line-height: 1.6;
+			font-size: 14px;
+			color: #333;
+		}
+		.person-card .media-body p:last-child {
+			margin-top: auto;
+			font-style: italic;
+			color: #666;
+		}
+	</style>
+  </head>
+  <body>
+	  <!--导航栏-->
+    <nav class="navbar">
+      <div class="container-fluid navbar-inverse navbar-fixed-top">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html" style="display: flex; align-items: center; gap: 8px; font-size: 22px; font-weight: bold; font-family: 'KaiTi', 'STKaiti', serif;">十个勤天 <span style="font-size: 24px;">🌞</span></a>
+        </div>
+   
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav" style="display: flex; justify-content: center; width: 100%; font-size: 17px;">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="page1.html">成员介绍</a></li>
+        <li><a href="page2.html">勤天资讯</a></li>
+      <li><a href="page3.html">小种子农学手册</a></li>
+      <li><a href="page4.html">禾伙人留言</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br>
+    <h2 style="text-align: center;">成员介绍</h2>
+    <br>
+    <div class="container pro">
+    <div class="row">
+      <!-- 响应式布局中等屏幕（电脑端）占据一行六列，小屏幕（平板端）占据一整行十二列 -->
+      <div class="col-md-6 col-sm-12">
+        <!-- 媒体对象组件 -->
+        <div class="media person-card">
+          <!-- 媒体对象左边图片内容 -->
+          <div class="media-left">
+            <a href="#">
+               <img src="images/个人介绍-蒋敦豪.jpg" style="width: 150px; height: auto;">
+            </a>
+          </div>
+          <div class="media-body">
+            <h3 class="media-heading">蒋敦豪</h3>  
+            <p>出生日期：1995年5月21日</p>
+            <p>身份：十个勤天老大、歌手、乐队“旅行新蜜蜂”主唱</p>
+            <p>简介：毕业于新疆艺术学院音乐系，2016 年参加《中国新歌声》获汪峰组冠军、全国总决赛冠军。2019年，参加优酷乐队成长类音乐节目《一起乐队吧》，与四位音乐人在节目中组成旅行新蜜蜂乐队，获得年度总冠军。代表作《天亮就飞吧》《金风玉露》等歌曲。</p>
+            <p>——“不是我做的不好，只是别人恰巧不想要。”</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-6 col-sm-12">
+        <div class="media person-card">
+        <div class="media-left">
+          <a href="#">
+             <img src="images/个人介绍-鹭卓.jpg" style="width: 150px; height: auto;">
+          </a>
+        </div>
+        <div class="media-body">
+            <h3 class="media-heading">鹭卓</h3>
+            <p>原名：路卓豪</p>
+            <p>出生日期：1995年11月24日</p>
+            <p>身份：十个勤天老二、歌手、原创音乐人</p>
+            <p>简介：毕业于四川音乐学院音乐表演专业。2016年，加入白色系文化公司成为试训生，以ZERO-G男团成员的身份活动。2017年6月，参加白色系举办的《进击的练习生》直播选拔赛从而正式出道。2018年到2022年，随ZERO-G参与大大小小路演活动。代表作《后陡门的夏》《You All My Life》《船》等歌曲。</p>
+            <p>——“我是玫瑰花王子鹭卓。”</p>
+          </div>
+      </div>
+      </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+        <div class="media person-card">
+        <div class="media-left">
+          <a href="#">
+             <img src="images/个人介绍-李耕耘.jpg" style="width: 150px; height: auto;">
+          </a>
+        </div>
+        <div class="media-body">
+            <h3 class="media-heading">李耕耘</h3>
+            <p>原名：李命镪</p>
+            <p>出生日期：1996年7月15日</p>
+            <p>身份：十个勤天老三、演员</p>
+            <p>简介：2020年，毕业于北京电影学院；同年，改艺名李耕耘。2022年9月，搭档欧豪、蓝盈莹、刘奕君参演军旅剧《兵自风中来》。节目种外号“孤狼”。影视代表作《兵自风中来》《古乐风华录》，个人单曲《无奈》。</p>
+            <p>——“人生真的好神奇，突然就有个转折点。”</p>
+          </div>
+      </div>
+      </div>
+      
+      <div class="col-md-6 col-sm-12">
+        <div class="media person-card">
+        <div class="media-left">
+          <a href="#">
+             <img src="images/个人介绍-李昊.jpg" style="width: 150px; height: auto;">
+          </a>
+        </div>
+       <div class="media-body">
+            <h3 class="media-heading">李昊</h3>
+            <p>原名：李镓壕</p>
+            <p>出生日期：1997年7月2日</p>
+            <p>身份：十个勤天老四、中国香港歌手、演员</p>
+            <p>简介：毕业于暨南大学。2017年，参加偶像养成节目《明日之子》而正式出道。2020年，作为选手参加少年青春逐梦成长节目《少年之名》；同年，主演个人首部电视剧《你好喵室友》。代表作《寄居》《冬蛾》《磨洋工》等歌曲。</p>
+            <p>——“给个麦你呗。”</p>
+          </div>
+      </div>
+      </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+        <div class="media person-card">
+        <div class="media-left">
+          <a href="#">
+             <img src="images/个人介绍-赵一博.jpg" style="width: 150px; height: auto;">
+          </a>
+        </div>
+        <div class="media-body">
+          <h3 class="media-heading">赵一博</h3>
+        <p>出生日期：1998年11月6日</p>
+        <p>身份：十个勤天老五、演员</p>
+        <p>简介：毕业于上海海事大学。2020年，参与职场文化代际互动真人秀节目《花样实习生》，从而进入演艺圈。2025年参演的电视剧《淮水竹亭》在爱奇艺播出。代表作歌曲《这有什么不好呢》，电视剧《淮水竹亭》等。</p>
+        <p>——“晚安，今天的你也很辛苦！”</p>
+      </div>
+      </div>
+      </div>
+      
+      <div class="col-md-6 col-sm-12">
+        <div class="media person-card">
+        <div class="media-left">
+          <a href="#">
+             <img src="images/个人介绍-卓沅.jpg" style="width: 150px; height: auto;">
+          </a>
+        </div>
+        <div class="media-body">
+          <h3 class="media-heading">卓沅</h3>
+          <p>原名：张钥沅</p>
+          <p>出生日期：1999年6月16日</p>
+          <p>身份：十个勤天老六、歌手</p>
+          <p>简介：2017年4月25日，卓沅随ZERO-G获粉丝网盛典最具粉丝号召力男团奖。2019年1月21日，参加的偶像男团竞演养成类真人秀《青春有你》在爱奇艺播出。2026参加湖南卫视芒果TV春节联欢晚会。代表作《RingRingRing》《暖一片星光》《The Summer Rain》等歌曲。</p>
+          <p>——“我们终于做了一件有结果的事。”</p>
+        </div>
+      </div>
+      </div>
+      </div>
+      <br>
+
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+        <div class="media person-card">
+        <div class="media-left">
+          <a href="#">
+             <img src="images/个人介绍-赵小童.jpg" style="width: 150px; height: auto;">
+          </a>
+        </div>
+        <div class="media-body">
+          <h3 class="media-heading">赵小童</h3>
+        <p>出生日期：1999年12月20日</p>
+        <p>身份：十个勤天老七、演员</p>
+        <p>简介：毕业于中央戏剧学院。代表作话剧《蓟州疑云》，歌曲《Voyage》等。</p>
+        <p>——“深深的话，我们浅浅地说；未来长长的路，我们再慢慢地走。”</p>
+      </div>
+      </div>
+      </div>
+      
+      <div class="col-md-6 col-sm-12">
+        <div class="media person-card">
+        <div class="media-left">
+          <a href="#">
+             <img src="images/个人介绍-何浩楠.jpg" style="width: 150px; height: auto;">
+          </a>
+        </div>
+        <div class="media-body">
+          <h3 class="media-heading">何浩楠</h3>
+          <p>原名：何懿峻</p>
+          <p>出生日期：2000年11月6日</p>
+          <p>身份：十个勤天老八、歌手、演员</p>
+          <p>简介：2020年，参加综艺《少年之名》。2021年，参加腾讯视频综艺《创造营2021》。2022年，参演短剧《限时恋人》。代表作歌曲《河》《风的思念》，电视剧《星辰令》等。</p>
+          <p>——“大家就轻松一点，开心最重要。”</p>
+        </div>
+      </div>
+      </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+        <div class="media person-card">
+        <div class="media-left">
+          <a href="#">
+             <img src="images/个人介绍-陈少熙.jpg" style="width: 150px; height: auto;">
+          </a>
+        </div>
+        <div class="media-body">
+          <h3 class="media-heading">陈少熙</h3>
+          <p>原名：陈波翰</p>
+          <p>出生日期：2002年12月3日</p>
+          <p>身份：十个勤天老九、歌手、演员</p>
+          <p>简介：毕业于中国戏曲学院昆曲表演专业。代表作综艺《追花两万里》，电影《倒仓》，歌曲《思念难捱如晚风侵袭》等。</p>
+          <p>——“人生不就是白干加白干。”</p>
+        </div>
+      </div>
+      </div>
+      
+      <div class="col-md-6 col-sm-12">
+        <div class="media person-card">
+        <div class="media-left">
+          <a href="#">
+             <img src="images/个人介绍-王一珩.jpg" style="width: 150px; height: auto;">
+          </a>
+        </div>
+        <div class="media-body">
+          <h3 class="media-heading">王一珩</h3>
+          <p>出生日期：2004年8月27日</p>
+          <p>身份：十个勤天老十、歌手</p>
+          <p>简介：MultiGame厂牌主理人之一，2019年4月14日成立。2024年8月，发行个人首张创作迷你专辑《My Room Tour》；同年，参加综艺节目《我的主场》《我家那小子·好好生活季》。代表作《-18℃》《春春和夏夏》《很浪漫先生》等歌曲。</p>
+          <p>——“嘟嘟嘟嘟嘟嘟~”</p>
+        </div>
+      </div>
+      </div>
+      </div>
+      
+    </div>  
+	
+<!-- 	版权说明区开始 -->
+
+     <div class="container-fluid  footer">
+       <div class="row">
+         <div class="col-md-12">Copyright © LIUYANG 相信土地的力量</div>
+       </div>
+     </div>
+	
+	
+    <!-- 引入js文件 -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- 图片放大弹窗 -->
+    <div id="imgModal" class="modal">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modalImg">
+    </div>
+
+    <script>
+      var modal = document.getElementById("imgModal");
+      var modalImg = document.getElementById("modalImg");
+
+      document.querySelectorAll(".media-left img").forEach(function(img) {
+        img.addEventListener("click", function() {
+          modal.style.display = "block";
+          modalImg.src = this.src;
+        });
+      });
+
+      document.querySelector(".close").addEventListener("click", function() {
+        modal.style.display = "none";
+      });
+
+      modal.addEventListener("click", function(e) {
+        if (e.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

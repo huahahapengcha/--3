@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>首页</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/index.css">
+	<style>
+		.carousel-container {
+			position: relative;
+			width: 100%;
+			height: 500px;
+			perspective: 1000px;
+			overflow: hidden;
+			margin-top: 50px;
+		}
+		.carousel-track {
+			position: relative;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.carousel-slide {
+			position: absolute;
+			width: 60%;
+			height: 80%;
+			transition: all 0.6s ease;
+			opacity: 0.5;
+			transform: scale(0.8);
+		}
+		.carousel-slide img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: 10px;
+			box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+		}
+		.carousel-slide.active {
+			z-index: 3;
+			opacity: 1;
+			transform: scale(1) translateX(0);
+		}
+		.carousel-slide.prev {
+			z-index: 2;
+			transform: scale(0.85) translateX(-30%);
+		}
+		.carousel-slide.next {
+			z-index: 2;
+			transform: scale(0.85) translateX(30%);
+		}
+		.carousel-nav {
+			position: absolute;
+			bottom: 20px;
+			left: 50%;
+			transform: translateX(-50%);
+			display: flex;
+			gap: 10px;
+			z-index: 10;
+		}
+		.carousel-dot {
+			width: 12px;
+			height: 12px;
+			border-radius: 50%;
+			background: rgba(255,255,255,0.5);
+			cursor: pointer;
+			transition: 0.3s;
+		}
+		.carousel-dot.active {
+			background: #fff;
+			width: 30px;
+			border-radius: 6px;
+		}
+	</style>
+  </head>
+  <body>
+	  	   <!--导航栏-->
+    <nav class="navbar">
+      <div class="container-fluid navbar-inverse navbar-fixed-top">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html" style="display: flex; align-items: center; gap: 8px; font-size: 22px; font-weight: bold; font-family: 'KaiTi', 'STKaiti', serif;">十个勤天 <span style="font-size: 24px;">🌞</span></a>
+        </div>
+   
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav" style="display: flex; justify-content: center; width: 100%; font-size: 17px;">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="page1.html">成员介绍</a></li>
+		    <li><a href="page2.html">勤天资讯</a></li>
+			<li><a href="page3.html">小种子农学手册</a></li>
+			<li><a href="page4.html">禾伙人留言</a></li>
+          </ul>
+        </div>
+      </div>
+  
+	<!-- 3D轮播图 -->
+	<div class="carousel-container">
+		<div class="carousel-track">
+			<div class="carousel-slide" data-index="0">
+				<img src="images/banner1.png" alt="banner1">
+			</div>
+			<div class="carousel-slide active" data-index="1">
+				<img src="images/banner2.png" alt="banner2">
+			</div>
+			<div class="carousel-slide" data-index="2">
+				<img src="images/banner3.png" alt="banner3">
+			</div>
+		</div>
+		<div class="carousel-nav">
+			<div class="carousel-dot" data-index="0"></div>
+			<div class="carousel-dot active" data-index="1"></div>
+			<div class="carousel-dot" data-index="2"></div>
+		</div>
+	</div>
+	<!-- 轮播图 -->
+
+	  <div class="container story">
+	  	<div class="row">
+	  		<h2>勤天简介</h2>
+			<span style="font-size: 18px;">"十个勤天"是由爱奇艺出品的劳作纪实互动节目《种地吧》打造的团体IP，由蒋敦豪、鹭卓、李耕耘、李昊、赵一博、卓沅、赵小童、何浩楠、陈少熙、王一珩十个人组成，同时也是十位成员成立的公司简称——十个勤天（杭州）农业发展有限责任公司。</span><br>
+			</p>
+	  	</div>
+		<div class="row">
+			<img src="images/长合照.jpg" >
+		</div>
+	  </div>
+	  
+	  <div class="container jieshao">
+	  	<div class="row"> 
+			<!-- 响应式布局中等屏幕（电脑端） -->
+	  		<div class="col-md-12" style="order: 2;">
+	  			<div class="panel panel-default">
+	  			  <div class="panel-body">
+	  			    <p style="font-size:16px; text-indent: 2em;">十位少年从零基础起步，考取拖拉机、联合收割机等现代化农具驾驶执照，掌握医疗救护、消防安全、木工瓦工等生活技能，从杭州后陡门58号的142亩土地出发，逐步成长为农业助农领域具有广泛影响力的青年团体。随着节目的持续热播，越来越多的青年人开始关注农业、理解农业、投身农业，共同促进中国农业的繁荣发展。</p>
+	  			    <p style="font-size:16px;"><strong style="color: #4E8531; display: block; text-align: center; padding: 8px; background: linear-gradient(90deg, transparent, #E8F5E9, transparent); border-radius: 5px; margin-bottom: 10px;">第一季（2023年）：天崩开局，关关难过关关过</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;2023年2月21日，十个勤天（杭州）农业发展有限责任公司正式成立。第一季节目中，十位少年在杭州西湖区后陡门58号开启了为期200天的农耕挑战。面对零基础的困境，他们抢收62吨水稻、搬运30吨有机肥、培育4000盆玫瑰花、种植142亩小麦，将一粒粒种子变成了面粉。这一季，他们用最质朴的方式完成了从种地小白到新农人的蜕变。</p>
+	  			    <p style="font-size:16px;"><strong style="color: #4E8531; display: block; text-align: center; padding: 8px; background: linear-gradient(90deg, transparent, #E8F5E9, transparent); border-radius: 5px; margin-bottom: 10px;">第二季（2024年）：新理念新技术，农业科技做大做强</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;第二季迎来科技兴农的全面升级。十个勤天在后陡门58号开垦经营约450亩土地，种植小麦、油菜、水稻等大田作物，同时管理10亩玻璃大棚，种植草莓、食用玫瑰花、羽衣甘蓝、二荆条等15余种经济作物；养殖小龙虾、翘嘴鱼、观赏锦鲤、蜜蜂等水产生物。他们不仅产出玫瑰酪、草莓酱、烧椒酱、即食小龙虾等加工产品，还推出了各类文创和Holdoumen潮牌服饰。同年3月植树节，他们远赴甘肃民勤县腾格里沙漠，联合多方力量种下18.8万棵梭梭树。2024年2月10日，十个勤天首登央视春晚，在湖南长沙分会场演唱歌曲《遇长沙》；5月18日，他们举办首届“爱侬日”助农直播，开启了品牌化助农的新模式。</p>
+	  			    <p style="font-size:16px;"><strong style="color: #4E8531; display: block; text-align: center; padding: 8px; background: linear-gradient(90deg, transparent, #E8F5E9, transparent); border-radius: 5px; margin-bottom: 10px;">第三季（2025年）：见天地之广阔，解民生之多艰</strong><br>&nbsp;&nbsp;&nbsp;&nbsp;第三季，十个勤天真正走出方寸之地，走向全国偏远地区。他们在青海囊谦帮助白扎盐场创新产品，在黑龙江林口零下20度的严寒中打沙棘，打开湖南宁乡花猪销路，通过电商直播和自身影响力将优质农产品推向全国。其中，芫根助农直播收益198.29万元全部捐赠给玉树藏医学校。第二届“5·18爱侬日”联合57家文旅机构推介各地农产品。1月28日，十个勤天以开场节目《迎福》和群舞《如意舞步》惊艳亮相央视春晚主会场。</p>
+	  			    <p style="font-size:16px; text-indent: 2em;">三季节目以来他们真正做到了"做大做强"，十个勤天用三年时间证明：当土地重新成为丈量青春的标尺，当生活的价值在躬身实践中生长，当带着泥土芬芳的现实成果呈现在我们面前。“种地”的意义不言而喻。</p>
+				</div>
+	  			</div>
+	  		</div>
+			 
+			<!-- 响应式布局中等屏幕（电脑端） -->
+			<div class="col-md-12" style="order: 1;">
+				<!-- 面板组件 -->
+				<div class="panel panel-default" style="margin-bottom: 20px;">
+				  <div class="panel-body">
+					  <!-- 音频 -->
+					<p style="font-weight: bold; text-align: center; padding: 10px; background: linear-gradient(135deg, #4E8531, #6BBF59); color: white; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(78, 133, 49, 0.3);">🎵 十个勤天企业推广曲《后陡门的夏》</p>
+					<audio src="video/后陡门的夏.mp3" controls="controls" style="width: 100%; margin-bottom: 20px; min-height: 35px;">
+					您的浏览器不支持音频播放
+					</audio>
+					<!-- 视频 -->
+					<p style="font-weight: bold; text-align: center; padding: 10px; background: linear-gradient(135deg, #4E8531, #6BBF59); color: white; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 2px 8px rgba(78, 133, 49, 0.3);">🎬 为什么会有十个勤天&种地吧？</p>
+					<video src="video/先导片.mp4" controls="controls" style="width: 100%; height: auto; min-height: 300px; display: block; margin: 0 auto;">
+					您的浏览器不支持视频播放
+					</video>
+				  </div>
+				</div>
+			</div>
+	  	</div>
+	  </div>
+<!-- 资讯部分 -->
+	<br>
+    <div class="container">
+        <div class="row">
+        <h2 style="text-align: center;">勤天资讯</h2>
+            <div class="col-md-4 portfolio-item">
+                <img src="images/yinyuehui.jpg">
+                <h3>#十个勤天 麦田音乐会#</h3>
+                <p>他们举办的《麦田相约 - 种地吧感恩音乐会》引起了很高的热度。这场音乐会选址在他们辛苦耕种的麦田边，舞台背景就是金黄色的麦浪，充满了田园诗意。十个勤天成员在音乐会上的表演十分精彩，他们演唱了在种地过程中创作的歌曲，这些歌曲中包含了他们对土地、对劳动的深厚感情，这种独特的音乐会形式让粉丝和观众们感受到了他们的多才多艺和对生活的热爱，因此相关话题登上热搜。</p>
+                <a href="page2.html">
+				    <button>更多</button>
+				</a>
+            </div>
+            <div class="col-md-4 portfolio-item">
+                <img src="images/zhishu.jpg">
+                <h3>#十个勤天 沙漠植树#</h3>
+                <p >他们在植树节自费在甘肃沙漠种下 18 万棵占地五百亩的梭梭树这一公益行为获得了大量的赞誉。在如今环保话题日益受到重视的背景下，他们身体力行地参与到沙漠绿化这种大型公益项目中，传递出了正能量，很多媒体纷纷报道，相关话题也登上热搜，树立了他们良好的社会形象，也激励了更多人参与到环保公益事业中。</p><br>
+                <a href="page2.html">
+				    <button>更多</button>
+				</a>
+            </div>
+            
+            <div class="col-md-4 portfolio-item">
+                <img src="images/zhuanji.jpg">
+                <h3>#十个勤天 新专辑发布#</h3>
+                <p>当他们发布首张录音棚专辑《展开一天》以及红色专辑《故乡长卷》时，相关话题登上热搜。这体现了他们在音乐领域的探索和突破，从最初在节目中简单的哼唱到专业的专辑制作，他们的音乐才华得到了进一步的展现，也让粉丝们看到了他们除了种地之外在艺术方面的追求，因此引起了粉丝们的热烈讨论和宣传。</p><br>
+                <a href="page2.html">
+				    <button>更多</button>
+				</a>
+            </div>
+
+        </div>
+    </div>
+    <!-- 资讯部分结束 -->
+
+	  <div class="container-fluid works">
+	  	<div class="container">
+	  		<div class="row text-center title">
+	  			<h2>相关图集</h2>
+	  		</div>
+	  		<div class="row bottom">
+	  			<ul class="scroll-container">
+	  				<li class="scroll-item">
+	  				<img src="images/合照1.jpg" onclick="openModal(this.src)" alt="合照1">
+	  				<img src="images/合照2.jpg" onclick="openModal(this.src)" alt="合照2">
+	  				<img src="images/合照3.jpg" onclick="openModal(this.src)" alt="合照3">
+	  				<img src="images/合照4.jpg" onclick="openModal(this.src)" alt="合照4">
+	  				<img src="images/合照5.jpg" onclick="openModal(this.src)" alt="合照5">
+	  				<img src="images/合照6.jpg" onclick="openModal(this.src)" alt="合照6">
+					<img src="images/大米.png" onclick="openModal(this.src)" alt="大米">
+					<img src="images/六尾飘移虾.png" onclick="openModal(this.src)" alt="六尾飘移虾">
+					<img src="images/翘嘴咸鱼.png" onclick="openModal(this.src)" alt="翘嘴咸鱼">
+					<img src="images/草莓酱.png" onclick="openModal(this.src)" alt="草莓酱">
+					<img src="images/全麦粉.png" onclick="openModal(this.src)" alt="全麦粉">
+					<img src="images/玫瑰酪.png" onclick="openModal(this.src)" alt="玫瑰酪">
+	  				</li>
+	  			</ul>
+	  		</div>
+	  		
+	  	</div>
+	  </div>
+	  
+	  <!-- 图片查看模态框 -->
+	  <div id="imageModal" class="modal" onclick="closeModal()">
+	    <span class="close">&times;</span>
+	    <img class="modal-content" id="modalImage">
+	    <div id="caption"></div>
+	  </div>
+	  
+	
+<!--版权区-->
+     <div class="container-fluid  footer">
+       <div class="row">
+         <div class="col-md-12">Copyright © LIUYANG 相信土地的力量</div>
+       </div>
+     </div>
+	
+    <!--引入js文件 -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+	<script>
+		const slides = document.querySelectorAll('.carousel-slide');
+		const dots = document.querySelectorAll('.carousel-dot');
+		let currentIndex = 1;
+		const totalSlides = slides.length;
+
+		function updateCarousel() {
+			slides.forEach((slide, index) => {
+				slide.classList.remove('active', 'prev', 'next');
+				const diff = index - currentIndex;
+				if (diff === 0) {
+					slide.classList.add('active');
+				} else if (diff === -1 || (currentIndex === 0 && index === totalSlides - 1)) {
+					slide.classList.add('prev');
+				} else if (diff === 1 || (currentIndex === totalSlides - 1 && index === 0)) {
+					slide.classList.add('next');
+				}
+			});
+
+			dots.forEach((dot, index) => {
+				dot.classList.toggle('active', index === currentIndex);
+			});
+		}
+
+		function nextSlide() {
+			currentIndex = (currentIndex + 1) % totalSlides;
+			updateCarousel();
+		}
+
+		function prevSlide() {
+			currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+			updateCarousel();
+		}
+
+		dots.forEach((dot, index) => {
+			dot.addEventListener('click', () => {
+				currentIndex = index;
+				updateCarousel();
+			});
+		});
+
+		setInterval(nextSlide, 3000);
+
+		updateCarousel();
+	</script>
+
+	<script>
+		function openModal(src) {
+			var modal = document.getElementById('imageModal');
+			var modalImg = document.getElementById('modalImage');
+			var captionText = document.getElementById('caption');
+			modal.style.display = "block";
+			modalImg.src = src;
+			captionText.innerHTML = src.split('/').pop().split('.')[0];
+			document.body.style.overflow = "hidden";
+		}
+
+		function closeModal() {
+			var modal = document.getElementById('imageModal');
+			modal.style.display = "none";
+			document.body.style.overflow = "auto";
+		}
+
+		window.onclick = function(event) {
+			var modal = document.getElementById('imageModal');
+			if (event.target == modal) {
+				closeModal();
+			}
+		}
+	</script>
+  </body>
+</html>
